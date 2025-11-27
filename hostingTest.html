@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Минки</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 МИНКИ</h1>
+            <div class="casino-stats">
+                <div class="balance">Баланс казино: <span id="casinoBalance">0</span>₽</div>
+                <div class="level">Уровень щедрости: <span id="generosityLevel">1</span></div>
+            </div>
+        </header>
+
+        <div class="game-area">
+            <!-- Игровое поле -->
+            <div class="game-board">
+                <h3>Игровое поле 3x3</h3>
+                <div class="grid" id="gameGrid">
+                    <!-- Ячейки будут созданы через JavaScript -->
+                </div>
+            </div>
+
+            <!-- Панель игроков -->
+            <div class="players-panel">
+                <h3>Игроки</h3>
+                <div class="players-list" id="playersList">
+                    <!-- Список игроков -->
+                </div>
+                
+                <div class="add-player">
+                    <h4>Добавить игрока</h4>
+                    <input type="number" id="playerBet" placeholder="Ставка (₽)" min="10" max="1000">
+                    <div class="cell-selection">
+                        <label>Выберите 3 ячейки:</label>
+                        <div class="available-cells" id="availableCells"></div>
+                    </div>
+                    <button onclick="addPlayer()">Добавить игрока</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Управление игрой -->
+        <div class="game-controls">
+            <button id="startGame" onclick="startGame()">Начать игру</button>
+            <button id="nextRound" onclick="nextRound()" disabled>Следующий раунд</button>
+            <div class="game-info">
+                <div>Общий банк: <span id="totalBank">0</span>₽</div>
+                <div>Призовой фонд: <span id="prizeFund">0</span>₽</div>
+            </div>
+        </div>
+
+        <!-- Результаты -->
+        <div class="results" id="results">
+            <h3>Результаты раунда</h3>
+            <div id="roundResults"></div>
+        </div>
+
+        <!-- История игр -->
+        <div class="game-history">
+            <h3>История игр</h3>
+            <div id="gameHistory"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
